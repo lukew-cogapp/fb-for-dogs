@@ -1,0 +1,126 @@
+{
+  "site": {
+    "title": "Furbbook",
+    "tagline": "The Social Network for Good Dogs",
+    "description": "Connect with fellow pups, share your best zoomies, and find your pack."
+  },
+  "nav": {
+    "home": "Home",
+    "profile": "My Kennel",
+    "friends": "Pack",
+    "messages": "Barks",
+    "notifications": "Sniffs"
+  },
+  "feed": {
+    "title": "The Feed Bowl",
+    "createPost": "What's on your snoot?",
+    "like": "Wag",
+    "comment": "Bark",
+    "share": "Fetch",
+    "wagsCount": "{count} wags",
+    "barksCount": "{count} barks"
+  },
+  "profile": {
+    "editProfile": "Groom Profile",
+    "followers": "Followers",
+    "following": "Sniffing",
+    "posts": "Posts",
+    "about": "About This Pup",
+    "breed": "Breed",
+    "age": "Dog Years",
+    "favoriteToy": "Favorite Toy",
+    "favoriteTreat": "Favorite Treat",
+    "hobbies": "Hobbies"
+  },
+  "actions": {
+    "addFriend": "Sniff Butts",
+    "message": "Send Bark",
+    "follow": "Follow Scent",
+    "unfollow": "Lose Scent"
+  },
+  "posts": [
+    {
+      "id": "1",
+      "author": "Barkley McFlufferson",
+      "avatar": "🐕",
+      "breed": "Golden Retriever",
+      "time": "2 belly rubs ago",
+      "content": "Just discovered the BEST stick in the park. It's at least 3 feet long. Might be a branch. Don't care. It's mine now.",
+      "wags": 42,
+      "barks": 7,
+      "image": null
+    },
+    {
+      "id": "2",
+      "author": "Sir Woofs-a-Lot",
+      "avatar": "🐩",
+      "breed": "Poodle",
+      "time": "5 naps ago",
+      "content": "Had my fur styled today. Feeling absolutely fabulous. The groomer said I was the best boy. Obviously.",
+      "wags": 89,
+      "barks": 23,
+      "image": null
+    },
+    {
+      "id": "3",
+      "author": "Chompers McGee",
+      "avatar": "🦮",
+      "breed": "German Shepherd",
+      "time": "1 walk ago",
+      "content": "SOMEONE CAME TO THE DOOR. I BARKED. THEY LEFT. You're welcome, family. Security detail never rests.",
+      "wags": 156,
+      "barks": 45,
+      "image": null
+    },
+    {
+      "id": "4",
+      "author": "Tiny Tornado",
+      "avatar": "🐕‍🦺",
+      "breed": "Chihuahua",
+      "time": "3 zoomies ago",
+      "content": "Everyone keeps calling me small. I am NOT small. I am concentrated power. Fear me.",
+      "wags": 203,
+      "barks": 67,
+      "image": null
+    },
+    {
+      "id": "5",
+      "author": "Noodle the Derp",
+      "avatar": "🐶",
+      "breed": "Basset Hound",
+      "time": "1 dinner ago",
+      "content": "Tried to catch my tail for 45 minutes. Almost had it this time. Tomorrow is my day, I can feel it.",
+      "wags": 312,
+      "barks": 91,
+      "image": null
+    },
+    {
+      "id": "6",
+      "author": "Bobin Rodges",
+      "avatar": "🦴",
+      "breed": "Labradoodle",
+      "time": "4 treats ago",
+      "content": "Dug up the entire garden looking for last week's bone. Found three tennis balls, a shoe, and someone else's bone instead. Calling that a win.",
+      "wags": 267,
+      "barks": 38,
+      "image": null
+    }
+  ],
+  "sidebar": {
+    "trending": "Trending Howls",
+    "trendingTopics": [
+      "#SquirrelWatch2026",
+      "#ZoomiesChallenge",
+      "#WhosAGoodBoy",
+      "#TreatJustice",
+      "#MailmanConspiracy"
+    ],
+    "suggestedFriends": "Dogs You Might Sniff",
+    "onlineFriends": "Pack Online"
+  },
+  "footer": {
+    "copyright": "© 2026 Furbbook. All borks reserved.",
+    "privacy": "Sniffing Policy",
+    "terms": "Terms of Belly Rubs"
+  }
+}

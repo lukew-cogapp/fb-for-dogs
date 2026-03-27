@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fur-cream: #f5e6d3;
+  --color-fur-light: #e8d5b7;
+  --color-fur-medium: #c4a882;
+  --color-fur-dark: #8b6f47;
+  --color-fur-brown: #6b4e2e;
+  --color-fur-chocolate: #4a3520;
+  --color-paw-pink: #e8a0bf;
+  --color-paw-dark: #c77da0;
+  --color-nose-black: #2d1f14;
+  --color-tongue-pink: #ff8fa3;
+  --color-sky-blue: #87ceeb;
+  --color-grass-green: #7cb342;
+
+  --font-sans: "Nunito", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTY9jo7eTWk.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDFUuRTY9jo7eTWk.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDH8uRTY9jo7eTWk.woff2")
+    format("woff2");
+}
+
+body {
+  background-color: var(--color-fur-cream);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M2 0 C2 2, 1 8, 2 12 C3 8, 2 2, 2 0' stroke='%23d4bc96' stroke-width='0.5' opacity='0.4'/%3E%3Cpath d='M12 5 C12 7, 11 13, 12 17 C13 13, 12 7, 12 5' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M22 2 C22 4, 21 10, 22 14 C23 10, 22 4, 22 2' stroke='%23d4bc96' stroke-width='0.5' opacity='0.35'/%3E%3Cpath d='M32 6 C32 8, 31 14, 32 18 C33 14, 32 8, 32 6' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M42 1 C42 3, 41 9, 42 13 C43 9, 42 3, 42 1' stroke='%23d4bc96' stroke-width='0.5' opacity='0.4'/%3E%3Cpath d='M52 4 C52 6, 51 12, 52 16 C53 12, 52 6, 52 4' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M7 20 C7 22, 6 28, 7 32 C8 28, 7 22, 7 20' stroke='%23d4bc96' stroke-width='0.5' opacity='0.35'/%3E%3Cpath d='M17 25 C17 27, 16 33, 17 37 C18 33, 17 27, 17 25' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M27 22 C27 24, 26 30, 27 34 C28 30, 27 24, 27 22' stroke='%23d4bc96' stroke-width='0.5' opacity='0.4'/%3E%3Cpath d='M37 26 C37 28, 36 34, 37 38 C38 34, 37 28, 37 26' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M47 21 C47 23, 46 29, 47 33 C48 29, 47 23, 47 21' stroke='%23d4bc96' stroke-width='0.5' opacity='0.35'/%3E%3Cpath d='M57 24 C57 26, 56 32, 57 36 C58 32, 57 26, 57 24' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M4 40 C4 42, 3 48, 4 52 C5 48, 4 42, 4 40' stroke='%23d4bc96' stroke-width='0.5' opacity='0.4'/%3E%3Cpath d='M14 45 C14 47, 13 53, 14 57 C15 53, 14 47, 14 45' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M24 42 C24 44, 23 50, 24 54 C25 50, 24 44, 24 42' stroke='%23d4bc96' stroke-width='0.5' opacity='0.35'/%3E%3Cpath d='M34 46 C34 48, 33 54, 34 58 C35 54, 34 48, 34 46' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3Cpath d='M44 41 C44 43, 43 49, 44 53 C45 49, 44 43, 44 41' stroke='%23d4bc96' stroke-width='0.5' opacity='0.4'/%3E%3Cpath d='M54 44 C54 46, 53 52, 54 56 C55 52, 54 46, 54 44' stroke='%23c4a882' stroke-width='0.5' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.fur-texture {
+  position: relative;
+  overflow: hidden;
+}
+
+.fur-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' opacity='0.1'%3E%3Cpath d='M1 0 C1 1, 0.5 5, 1 8' stroke-width='0.5'/%3E%3Cpath d='M8 2 C8 3, 7.5 7, 8 10' stroke-width='0.5'/%3E%3Cpath d='M15 1 C15 2, 14.5 6, 15 9' stroke-width='0.5'/%3E%3Cpath d='M22 3 C22 4, 21.5 8, 22 11' stroke-width='0.5'/%3E%3Cpath d='M29 0 C29 1, 28.5 5, 29 8' stroke-width='0.5'/%3E%3Cpath d='M36 2 C36 3, 35.5 7, 36 10' stroke-width='0.5'/%3E%3Cpath d='M4 20 C4 21, 3.5 25, 4 28' stroke-width='0.5'/%3E%3Cpath d='M11 22 C11 23, 10.5 27, 11 30' stroke-width='0.5'/%3E%3Cpath d='M18 21 C18 22, 17.5 26, 18 29' stroke-width='0.5'/%3E%3Cpath d='M25 23 C25 24, 24.5 28, 25 31' stroke-width='0.5'/%3E%3Cpath d='M32 20 C32 21, 31.5 25, 32 28' stroke-width='0.5'/%3E%3Cpath d='M39 22 C39 23, 38.5 27, 39 30' stroke-width='0.5'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fur-shadow {
+  box-shadow: 0 2px 8px rgba(107, 78, 46, 0.15), 0 0 0 1px
+    rgba(196, 168, 130, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.paw-button {
+  transition: all 0.2s ease;
+}
+
+.paw-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(232, 160, 191, 0.4);
+}
+
+.paw-button:active {
+  transform: scale(0.97);
+}

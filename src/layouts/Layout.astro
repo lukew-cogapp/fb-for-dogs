@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+import strings from "../i18n/en.json";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={strings.site.description} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>{strings.site.title}</title>
+  </head>
+  <body class="min-h-screen font-sans text-fur-chocolate">
+    <slot />
+  </body>
+</html>

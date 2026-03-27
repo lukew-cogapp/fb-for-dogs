@@ -13,11 +13,11 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="fur-texture fur-shadow sticky top-0 z-50 bg-fur-brown text-fur-cream">
+    <nav className="fur-navbar fur-shadow sticky top-0 z-50 bg-fur-brown text-fur-cream">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="text-2xl">🐾</span>
-          <h1 className="text-xl font-black tracking-tight">
+          <h1 className="fuzzy-text text-xl font-black tracking-tight">
             {strings.site.title}
           </h1>
         </div>

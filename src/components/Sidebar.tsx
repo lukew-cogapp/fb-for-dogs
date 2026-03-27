@@ -9,8 +9,8 @@ export const Sidebar = () => {
 
   return (
     <div className="sticky top-20 space-y-4">
-      <div className="fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
-        <h3 className="mb-3 font-bold text-fur-chocolate">
+      <div className="fur-card fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
+        <h3 className="fuzzy-text mb-3 font-bold text-fur-chocolate">
           🔥 {strings.sidebar.trending}
         </h3>
         <ul className="space-y-2">
@@ -25,8 +25,8 @@ export const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
-        <h3 className="mb-3 font-bold text-fur-chocolate">
+      <div className="fur-card fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
+        <h3 className="fuzzy-text mb-3 font-bold text-fur-chocolate">
           🐾 {strings.sidebar.suggestedFriends}
         </h3>
         <ul className="space-y-3">
@@ -50,8 +50,8 @@ export const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
-        <h3 className="mb-3 font-bold text-fur-chocolate">
+      <div className="fur-card fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
+        <h3 className="fuzzy-text mb-3 font-bold text-fur-chocolate">
           🟢 {strings.sidebar.onlineFriends}
         </h3>
         <div className="space-y-2">

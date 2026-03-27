@@ -18,7 +18,8 @@ export const App = () => {
           </aside>
         </div>
       </main>
-      <footer className="border-t border-fur-medium/30 py-6 text-center text-sm text-fur-dark">
+      <footer className="mt-6 py-6 text-center text-sm text-fur-dark">
+        <hr className="hair-divider mb-6" />
         <p>{strings.footer.copyright}</p>
         <div className="mt-2 flex justify-center gap-4">
           <span className="cursor-pointer hover:text-fur-chocolate">
@@ -35,7 +36,7 @@ export const App = () => {
 
 const ProfileCard = () => {
   return (
-    <div className="fur-shadow sticky top-20 rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
+    <div className="fur-card fur-shadow sticky top-20 rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
       <div className="mb-3 text-center text-5xl">🐕</div>
       <h3 className="text-center font-bold text-fur-chocolate">
         {strings.posts[0].author}

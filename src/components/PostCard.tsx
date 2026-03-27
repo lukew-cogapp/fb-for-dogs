@@ -23,7 +23,7 @@ export const PostCard = ({ post }: { post: Post }) => {
   };
 
   return (
-    <article className="fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
+    <article className="fur-card fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
       <div className="mb-3 flex items-center gap-3">
         <span className="text-3xl">{post.avatar}</span>
         <div>
@@ -45,7 +45,8 @@ export const PostCard = ({ post }: { post: Post }) => {
         </span>
       </div>
 
-      <div className="flex border-t border-fur-medium/20 pt-3">
+      <hr className="hair-divider mb-3" />
+      <div className="flex pt-0">
         <button
           type="button"
           onClick={handleWag}

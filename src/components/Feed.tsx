@@ -1,4 +1,5 @@
 import { useState } from "react";
+import data from "../data/fixtures.json";
 import strings from "../i18n/en.json";
 import { PostCard } from "./PostCard";
 
@@ -7,12 +8,14 @@ export const Feed = () => {
 
   return (
     <div className="space-y-4">
-      <div className="fur-card fur-shadow rounded-2xl bg-white/70 p-4 backdrop-blur-sm">
-        <h2 className="fuzzy-text mb-3 text-lg font-bold text-fur-chocolate">
+      <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-4 shadow-fur backdrop-blur-sm">
+        <h2 className="mb-3 text-lg font-bold text-fur-chocolate [text-shadow:var(--text-shadow-fuzzy)]">
           {strings.feed.title}
         </h2>
         <div className="flex gap-3">
-          <div className="text-3xl">🐕</div>
+          <div className="text-3xl" aria-hidden="true">
+            🐕
+          </div>
           <input
             type="text"
             placeholder={strings.feed.createPost}
@@ -22,14 +25,14 @@ export const Feed = () => {
           />
           <button
             type="button"
-            className="paw-button rounded-full bg-paw-pink px-5 py-2 text-sm font-bold text-white"
+            className="rounded-full bg-paw-pink px-5 py-2 text-sm font-bold text-white transition-all duration-200 hover:scale-105 hover:shadow-[0_4px_12px_rgba(232,160,191,0.4)] active:scale-97"
           >
             🐾
           </button>
         </div>
       </div>
 
-      {strings.posts.map((post) => (
+      {data.posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
     </div>

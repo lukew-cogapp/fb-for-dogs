@@ -1,31 +1,23 @@
 import { useState } from "react";
 import strings from "../i18n/en.json";
-
-interface Post {
-  id: string;
-  author: string;
-  avatar: string;
-  breed: string;
-  time: string;
-  content: string;
-  wags: number;
-  barks: number;
-  image: string | null;
-}
+import type { Post } from "../types";
 
 export const PostCard = ({ post }: { post: Post }) => {
   const [wags, setWags] = useState(post.wags);
   const [wagged, setWagged] = useState(false);
 
   const handleWag = () => {
-    setWagged(!wagged);
-    setWags(wagged ? post.wags : post.wags + 1);
+    const newWagged = !wagged;
+    setWagged(newWagged);
+    setWags(newWagged ? post.wags + 1 : post.wags);
   };
 
   return (
-    <article className="fur-card fur-shadow rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
+    <article className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur backdrop-blur-sm">
       <div className="mb-3 flex items-center gap-3">
-        <span className="text-3xl">{post.avatar}</span>
+        <span className="text-3xl" role="img" aria-label={post.breed}>
+          {post.avatar}
+        </span>
         <div>
           <h3 className="font-bold text-fur-chocolate">{post.author}</h3>
           <p className="text-xs text-fur-dark">
@@ -46,11 +38,11 @@ export const PostCard = ({ post }: { post: Post }) => {
       </div>
 
       <hr className="hair-divider mb-3" />
-      <div className="flex pt-0">
+      <div className="flex">
         <button
           type="button"
           onClick={handleWag}
-          className={`paw-button flex flex-1 items-center justify-center gap-1 rounded-xl py-2 text-sm transition-colors ${
+          className={`flex flex-1 items-center justify-center gap-1 rounded-xl py-2 text-sm transition-all duration-200 hover:scale-105 active:scale-97 ${
             wagged
               ? "font-bold text-paw-pink"
               : "text-fur-dark hover:bg-fur-cream/50"
@@ -60,13 +52,13 @@ export const PostCard = ({ post }: { post: Post }) => {
         </button>
         <button
           type="button"
-          className="paw-button flex flex-1 items-center justify-center gap-1 rounded-xl py-2 text-sm text-fur-dark transition-colors hover:bg-fur-cream/50"
+          className="flex flex-1 items-center justify-center gap-1 rounded-xl py-2 text-sm text-fur-dark transition-all duration-200 hover:scale-105 hover:bg-fur-cream/50 active:scale-97"
         >
           💬 {strings.feed.comment}
         </button>
         <button
           type="button"
-          className="paw-button flex flex-1 items-center justify-center gap-1 rounded-xl py-2 text-sm text-fur-dark transition-colors hover:bg-fur-cream/50"
+          className="flex flex-1 items-center justify-center gap-1 rounded-xl py-2 text-sm text-fur-dark transition-all duration-200 hover:scale-105 hover:bg-fur-cream/50 active:scale-97"
         >
           🦴 {strings.feed.share}
         </button>

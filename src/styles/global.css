@@ -4,7 +4,7 @@
   --color-fur-cream: #f5e6d3;
   --color-fur-light: #e8d5b7;
   --color-fur-medium: #c4a882;
-  --color-fur-dark: #8b6f47;
+  --color-fur-dark: #6b5a3e;
   --color-fur-brown: #6b4e2e;
   --color-fur-chocolate: #4a3520;
   --color-paw-pink: #e8a0bf;
@@ -15,6 +15,13 @@
   --color-grass-green: #7cb342;
 
   --font-sans: "Nunito", system-ui, sans-serif;
+
+  --shadow-fur: 0 2px 8px rgba(107, 78, 46, 0.15), 0 0 0 1px
+    rgba(196, 168, 130, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  --text-shadow-fuzzy: 0 0 1px rgba(74, 53, 32, 0.6), 0 0 3px
+    rgba(74, 53, 32, 0.15), 1px 0 2px rgba(139, 111, 71, 0.1), -1px 0 2px
+    rgba(139, 111, 71, 0.1);
 }
 
 @font-face {
@@ -46,76 +53,80 @@
 
 /* ── Dense fur background ─────────────────────────────────────────── */
 body {
-  background-color: var(--color-fur-cream);
+  @apply bg-fur-cream;
+
   background-image: repeating-linear-gradient(
       78deg,
       transparent,
       transparent 2px,
-      rgba(196, 168, 130, 0.18) 2px,
-      rgba(196, 168, 130, 0.18) 3px
+      color-mix(in srgb, var(--color-fur-medium) 18%, transparent) 2px,
+      color-mix(in srgb, var(--color-fur-medium) 18%, transparent) 3px
     ),
     repeating-linear-gradient(
       95deg,
       transparent,
       transparent 3px,
-      rgba(180, 150, 110, 0.13) 3px,
-      rgba(180, 150, 110, 0.13) 4px
+      color-mix(in srgb, var(--color-fur-dark) 13%, transparent) 3px,
+      color-mix(in srgb, var(--color-fur-dark) 13%, transparent) 4px
     ),
     repeating-linear-gradient(
       82deg,
       transparent,
       transparent 4px,
-      rgba(210, 185, 145, 0.15) 4px,
-      rgba(210, 185, 145, 0.15) 5px
+      color-mix(in srgb, var(--color-fur-light) 15%, transparent) 4px,
+      color-mix(in srgb, var(--color-fur-light) 15%, transparent) 5px
     ),
     repeating-linear-gradient(
       88deg,
       transparent,
       transparent 1px,
-      rgba(160, 130, 90, 0.1) 1px,
-      rgba(160, 130, 90, 0.1) 2px
+      color-mix(in srgb, var(--color-fur-brown) 10%, transparent) 1px,
+      color-mix(in srgb, var(--color-fur-brown) 10%, transparent) 2px
     );
 }
 
-/* ── Hair strands overlay for cards ──────────────────────────────── */
-.fur-card {
-  position: relative;
-  overflow: hidden;
-}
-
+/* ── Hair strand overlays (pseudo-elements need real CSS) ────────── */
 .fur-card::before {
   content: "";
-  position: absolute;
-  inset: 0;
+  @apply pointer-events-none absolute inset-0 z-1 rounded-[inherit];
+
   background-image: repeating-linear-gradient(
       85deg,
       transparent,
       transparent 3px,
-      rgba(139, 111, 71, 0.06) 3px,
-      rgba(139, 111, 71, 0.06) 4px
+      color-mix(in srgb, var(--color-fur-dark) 6%, transparent) 3px,
+      color-mix(in srgb, var(--color-fur-dark) 6%, transparent) 4px
     ),
     repeating-linear-gradient(
       92deg,
       transparent,
       transparent 5px,
-      rgba(107, 78, 46, 0.04) 5px,
-      rgba(107, 78, 46, 0.04) 6px
+      color-mix(in srgb, var(--color-fur-brown) 4%, transparent) 5px,
+      color-mix(in srgb, var(--color-fur-brown) 4%, transparent) 6px
     );
-  pointer-events: none;
-  z-index: 1;
-  border-radius: inherit;
 }
 
-/* ── Thick fur texture for navbar ────────────────────────────────── */
-.fur-navbar {
-  position: relative;
-  overflow: hidden;
+.fur-card::after {
+  content: "";
+  @apply pointer-events-none absolute -inset-0.5 z-2 rounded-[inherit];
+
+  box-shadow: inset 0 0 0 2px
+    color-mix(in srgb, var(--color-fur-medium) 30%, transparent), 0 0 4px 1px
+    color-mix(in srgb, var(--color-fur-medium) 15%, transparent);
+  mask-image: repeating-linear-gradient(
+    90deg,
+    black 0px,
+    black 1px,
+    transparent 1px,
+    transparent 3px
+  );
 }
 
+/* ── Navbar fur texture (pseudo-elements) ────────────────────────── */
 .fur-navbar::before {
   content: "";
-  position: absolute;
-  inset: 0;
+  @apply pointer-events-none absolute inset-0 z-1;
+
   background-image: repeating-linear-gradient(
       80deg,
       transparent,
@@ -137,18 +148,12 @@ body {
       rgba(0, 0, 0, 0.06) 1px,
       rgba(0, 0, 0, 0.06) 2px
     );
-  pointer-events: none;
-  z-index: 1;
 }
 
-/* ── Fuzzy fur edge on bottom of navbar ──────────────────────────── */
 .fur-navbar::after {
   content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  right: 0;
-  height: 12px;
+  @apply absolute -bottom-1.5 left-0 right-0 z-2 h-3;
+
   background: repeating-linear-gradient(
     90deg,
     var(--color-fur-brown) 0px,
@@ -157,32 +162,6 @@ body {
     transparent 3px
   );
   mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
-  z-index: 2;
-}
-
-/* ── Fuzzy card edges ────────────────────────────────────────────── */
-.fur-card::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: transparent;
-  box-shadow: inset 0 0 0 2px rgba(196, 168, 130, 0.3), 0 0 4px 1px
-    rgba(196, 168, 130, 0.15);
-  mask-image: repeating-linear-gradient(
-    90deg,
-    black 0px,
-    black 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  pointer-events: none;
-  z-index: 2;
-}
-
-.fur-shadow {
-  box-shadow: 0 2px 8px rgba(107, 78, 46, 0.15), 0 0 0 1px
-    rgba(196, 168, 130, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* ── Hair strand hover animation ─────────────────────────────────── */
@@ -200,30 +179,10 @@ body {
   animation: ruffle 0.3s ease-in-out;
 }
 
-/* ── Buttons ─────────────────────────────────────────────────────── */
-.paw-button {
-  transition: all 0.2s ease;
-}
-
-.paw-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(232, 160, 191, 0.4);
-}
-
-.paw-button:active {
-  transform: scale(0.97);
-}
-
-/* ── Fuzzy text (for headings) ───────────────────────────────────── */
-.fuzzy-text {
-  text-shadow: 0 0 1px rgba(74, 53, 32, 0.6), 0 0 3px rgba(74, 53, 32, 0.15),
-    1px 0 2px rgba(139, 111, 71, 0.1), -1px 0 2px rgba(139, 111, 71, 0.1);
-}
-
-/* ── Hairy dividers ──────────────────────────────────────────────── */
+/* ── Hair divider background (only the gradient needs CSS) ───────── */
 .hair-divider {
-  border: none;
-  height: 4px;
+  @apply h-1 border-none opacity-50;
+
   background: repeating-linear-gradient(
     90deg,
     var(--color-fur-medium) 0px,
@@ -231,16 +190,15 @@ body {
     transparent 1px,
     transparent 3px
   );
-  opacity: 0.5;
 }
 
-/* ── Fluffy input fields ─────────────────────────────────────────── */
+/* ── Fur input background texture ────────────────────────────────── */
 .fur-input {
   background-image: repeating-linear-gradient(
     88deg,
     transparent,
     transparent 4px,
-    rgba(196, 168, 130, 0.08) 4px,
-    rgba(196, 168, 130, 0.08) 5px
+    color-mix(in srgb, var(--color-fur-medium) 8%, transparent) 4px,
+    color-mix(in srgb, var(--color-fur-medium) 8%, transparent) 5px
   );
 }

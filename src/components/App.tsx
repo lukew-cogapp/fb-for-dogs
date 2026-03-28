@@ -1,6 +1,7 @@
 import strings from "../i18n/en.json";
 import { Feed } from "./Feed";
 import { Navbar } from "./Navbar";
+import { ProfileCard } from "./ProfileCard";
 import { Sidebar } from "./Sidebar";
 
 export const App = () => {
@@ -21,49 +22,21 @@ export const App = () => {
       <footer className="mt-6 py-6 text-center text-sm text-fur-dark">
         <hr className="hair-divider mb-6" />
         <p>{strings.footer.copyright}</p>
-        <div className="mt-2 flex justify-center gap-4">
-          <span className="cursor-pointer hover:text-fur-chocolate">
+        <nav className="mt-2 flex justify-center gap-4" aria-label="Footer">
+          <a
+            href="#privacy"
+            className="text-fur-dark transition-colors hover:text-fur-chocolate"
+          >
             {strings.footer.privacy}
-          </span>
-          <span className="cursor-pointer hover:text-fur-chocolate">
+          </a>
+          <a
+            href="#terms"
+            className="text-fur-dark transition-colors hover:text-fur-chocolate"
+          >
             {strings.footer.terms}
-          </span>
-        </div>
+          </a>
+        </nav>
       </footer>
-    </div>
-  );
-};
-
-const ProfileCard = () => {
-  return (
-    <div className="fur-card fur-shadow sticky top-20 rounded-2xl bg-white/70 p-5 backdrop-blur-sm">
-      <div className="mb-3 text-center text-5xl">🐕</div>
-      <h3 className="text-center font-bold text-fur-chocolate">
-        {strings.posts[0].author}
-      </h3>
-      <p className="text-center text-sm text-fur-dark">
-        {strings.posts[0].breed}
-      </p>
-      <div className="mt-4 flex justify-around text-center text-sm">
-        <div>
-          <div className="font-bold text-fur-chocolate">128</div>
-          <div className="text-fur-dark">{strings.profile.posts}</div>
-        </div>
-        <div>
-          <div className="font-bold text-fur-chocolate">1.2k</div>
-          <div className="text-fur-dark">{strings.profile.followers}</div>
-        </div>
-        <div>
-          <div className="font-bold text-fur-chocolate">847</div>
-          <div className="text-fur-dark">{strings.profile.following}</div>
-        </div>
-      </div>
-      <button
-        type="button"
-        className="paw-button mt-4 w-full rounded-full bg-paw-pink py-2 font-bold text-white"
-      >
-        {strings.profile.editProfile}
-      </button>
     </div>
   );
 };

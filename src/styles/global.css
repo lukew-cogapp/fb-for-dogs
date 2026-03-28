@@ -102,23 +102,33 @@ body {
       color-mix(in srgb, var(--color-fur-medium) 6%, transparent) 8px,
       color-mix(in srgb, var(--color-fur-medium) 6%, transparent) 9px
     );
-  animation: fur-sway 8s ease-in-out infinite;
 }
 
-/* ── Ambient fur sway on body ──────────────────────────────────────── */
+/* ── Ambient fur sway on body (GPU-composited via transform) ──────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -4px;
+  z-index: -1;
+  pointer-events: none;
+  background: inherit;
+  animation: fur-sway 8s ease-in-out infinite;
+  will-change: transform;
+}
+
 @keyframes fur-sway {
   0%,
   100% {
-    background-position: 0 0;
+    transform: translate(0, 0);
   }
   25% {
-    background-position: 1px -1px;
+    transform: translate(1px, -1px);
   }
   50% {
-    background-position: -1px 1px;
+    transform: translate(-1px, 1px);
   }
   75% {
-    background-position: 1px 0;
+    transform: translate(1px, 0);
   }
 }
 
@@ -159,9 +169,9 @@ body {
   );
 }
 
-/* ── Fuzzy edge filter on cards ────────────────────────────────────── */
+/* ── Fuzzy edge on cards (cheap border-radius jitter via clip-path) ── */
 .fur-card {
-  filter: url(#fur-edge);
+  border-radius: 1rem;
 }
 
 /* ── Navbar fur texture (pseudo-elements) ────────────────────────── */
@@ -320,6 +330,8 @@ body {
   z-index: 9999;
   border-radius: 1px;
   animation: float-strand linear infinite;
+  will-change: transform, opacity;
+  contain: strict;
   background: linear-gradient(
     to bottom,
     transparent,

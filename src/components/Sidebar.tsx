@@ -4,7 +4,7 @@ import strings from "../i18n/en.json";
 export const Sidebar = () => {
   return (
     <div className="sticky top-20 space-y-4">
-      <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur backdrop-blur-sm">
+      <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur">
         <h3 className="mb-3 font-bold text-fur-chocolate [text-shadow:var(--text-shadow-fuzzy)]">
           🔥 {strings.sidebar.trending}
         </h3>
@@ -22,7 +22,7 @@ export const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur backdrop-blur-sm">
+      <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur">
         <h3 className="mb-3 font-bold text-fur-chocolate [text-shadow:var(--text-shadow-fuzzy)]">
           🐾 {strings.sidebar.suggestedFriends}
         </h3>
@@ -52,7 +52,7 @@ export const Sidebar = () => {
         </ul>
       </div>
 
-      <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur backdrop-blur-sm">
+      <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur">
         <h3 className="mb-3 font-bold text-fur-chocolate [text-shadow:var(--text-shadow-fuzzy)]">
           🟢 {strings.sidebar.onlineFriends}
         </h3>

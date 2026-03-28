@@ -10,7 +10,8 @@
     "friends": "Pack",
     "messages": "Barks",
     "notifications": "Sniffs",
-    "toggleMenu": "Toggle menu"
+    "toggleMenu": "Toggle menu",
+    "search": "Sniff Around"
   },
   "feed": {
     "title": "The Feed Bowl",

@@ -29,7 +29,10 @@ export const Sidebar = () => {
         <ul className="space-y-3">
           {data.suggestedDogs.map((dog) => (
             <li key={dog.name} className="flex items-center gap-3">
-              <span className="text-2xl" aria-hidden="true">
+              <span
+                className="fur-avatar-ring flex h-8 w-8 items-center justify-center rounded-full bg-fur-cream text-2xl"
+                aria-hidden="true"
+              >
                 {dog.emoji}
               </span>
               <div className="flex-1">
@@ -40,7 +43,7 @@ export const Sidebar = () => {
               </div>
               <button
                 type="button"
-                className="rounded-full bg-paw-pink/20 px-3 py-1 text-xs font-bold text-paw-dark transition-all duration-200 hover:scale-105 hover:bg-paw-pink hover:text-white active:scale-97"
+                className="fur-btn rounded-full bg-paw-pink/20 px-3 py-1 text-xs font-bold text-paw-dark transition-all duration-200 hover:scale-105 hover:bg-paw-pink hover:text-white active:scale-97"
               >
                 {strings.actions.addFriend}
               </button>

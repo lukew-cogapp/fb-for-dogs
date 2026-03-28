@@ -15,7 +15,11 @@ export const PostCard = ({ post }: { post: Post }) => {
   return (
     <article className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-5 shadow-fur backdrop-blur-sm">
       <div className="mb-3 flex items-center gap-3">
-        <span className="text-3xl" role="img" aria-label={post.breed}>
+        <span
+          className="fur-avatar-ring flex h-10 w-10 items-center justify-center rounded-full bg-fur-cream text-3xl"
+          role="img"
+          aria-label={post.breed}
+        >
           {post.avatar}
         </span>
         <div>

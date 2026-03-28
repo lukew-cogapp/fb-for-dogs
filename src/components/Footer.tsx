@@ -4,7 +4,9 @@ export const Footer = () => {
   return (
     <footer className="mt-6 py-6 text-center text-sm text-fur-dark">
       <hr className="hair-divider mb-6" />
-      <p>{strings.footer.copyright}</p>
+      <p className="[text-shadow:var(--text-shadow-fuzzy)]">
+        {strings.footer.copyright}
+      </p>
       <nav className="mt-2 flex justify-center gap-4" aria-label="Footer">
         <a
           href="#privacy"

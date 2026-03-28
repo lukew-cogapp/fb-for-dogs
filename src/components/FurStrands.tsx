@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-const STRAND_COUNT = 12;
+const STRAND_COUNT = 6;
 
 const COLORS = [
   "var(--color-fur-medium)",

@@ -5,7 +5,7 @@ export const Composer = () => {
   const [postText, setPostText] = useState("");
 
   return (
-    <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-4 shadow-fur backdrop-blur-sm">
+    <div className="fur-card relative overflow-hidden rounded-2xl bg-white/70 p-4 shadow-fur">
       <h2 className="mb-3 text-lg font-bold text-fur-chocolate [text-shadow:var(--text-shadow-fuzzy)]">
         {strings.feed.title}
       </h2>

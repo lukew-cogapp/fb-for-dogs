@@ -13,15 +13,6 @@ import strings from "../i18n/en.json";
     <title>{strings.site.title}</title>
   </head>
   <body class="min-h-screen font-sans text-fur-chocolate">
-    <!-- SVG filter for fuzzy fur edges -->
-    <svg class="absolute h-0 w-0" aria-hidden="true">
-      <defs>
-        <filter id="fur-edge" x="-2%" y="-2%" width="104%" height="104%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" seed="2" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-      </defs>
-    </svg>
     <slot />
   </body>
 </html>

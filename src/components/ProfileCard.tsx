@@ -3,7 +3,7 @@ import strings from "../i18n/en.json";
 
 export const ProfileCard = () => {
   return (
-    <div className="fur-card relative overflow-hidden sticky top-20 rounded-2xl bg-white/70 p-5 shadow-fur backdrop-blur-sm">
+    <div className="fur-card relative overflow-hidden sticky top-20 rounded-2xl bg-white/70 p-5 shadow-fur">
       <div
         className="fur-avatar-ring mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-fur-cream text-5xl"
         aria-hidden="true"

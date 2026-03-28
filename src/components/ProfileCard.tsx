@@ -4,7 +4,10 @@ import strings from "../i18n/en.json";
 export const ProfileCard = () => {
   return (
     <div className="fur-card relative overflow-hidden sticky top-20 rounded-2xl bg-white/70 p-5 shadow-fur backdrop-blur-sm">
-      <div className="mb-3 text-center text-5xl" aria-hidden="true">
+      <div
+        className="fur-avatar-ring mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-fur-cream text-5xl"
+        aria-hidden="true"
+      >
         🐕
       </div>
       <h3 className="text-center font-bold text-fur-chocolate">
@@ -33,7 +36,7 @@ export const ProfileCard = () => {
       </div>
       <button
         type="button"
-        className="mt-4 w-full rounded-full bg-paw-pink py-2 font-bold text-white transition-all duration-200 hover:scale-105 hover:shadow-[0_4px_12px_rgba(232,160,191,0.4)] active:scale-97"
+        className="fur-btn mt-4 w-full rounded-full bg-paw-pink py-2 font-bold text-white transition-all duration-200 hover:scale-105 hover:shadow-[0_4px_12px_rgba(232,160,191,0.4)] active:scale-97"
       >
         {strings.profile.editProfile}
       </button>

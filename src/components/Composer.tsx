@@ -22,7 +22,7 @@ export const Composer = () => {
         />
         <button
           type="button"
-          className="rounded-full bg-paw-pink px-5 py-2 text-sm font-bold text-white transition-all duration-200 hover:scale-105 hover:shadow-[0_4px_12px_rgba(232,160,191,0.4)] active:scale-97"
+          className="fur-btn rounded-full bg-paw-pink px-5 py-2 text-sm font-bold text-white transition-all duration-200 hover:scale-105 hover:shadow-[0_4px_12px_rgba(232,160,191,0.4)] active:scale-97"
         >
           🐾
         </button>
